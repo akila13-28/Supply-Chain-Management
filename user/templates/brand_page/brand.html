@@ -1,0 +1,652 @@
+{% extends 'home_page/main.html' %}
+{% block content %}
+{% load static %}
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bootstrap shopping cart</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+body {
+
+    min-height: 100vh
+}
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color:rgb(99, 39, 120);
+}
+  
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid #888;
+  width: 34%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+a{
+    color: rgb(99, 39, 120);
+  }
+  a:hover{
+    color: black;
+    text-decoration: none;
+  }
+</style>
+
+  <script id="insert"></script>
+
+<script>document.getElementById('us1').disabled=true;</script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: payload,
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "system")
+            }
+          }
+        }(window.console))
+
+        window.console = console
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+<script type="text/javascript">
+			function showMessage1(){
+				// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s1");
+                if (change.innerHTML == "Subscribe")
+                {
+                    change.innerHTML = "Subscribed";
+					
+                }
+				document.getElementById('s1').style.backgroundColor = "violet";
+	
+	document.getElementById('s1').disabled=true; 
+	document.getElementById('us1').disabled=false;
+				
+			}
+	function showunMessage1(){
+				// Get the modal
+var modal = document.getElementById("myModall");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s1");
+                if (change.innerHTML == "Subscribed")
+                {
+                   change.innerHTML = "Subscribe";
+					
+               }
+				document.getElementById('s1').style.backgroundColor = "white";
+	
+	document.getElementById('s1').disabled=false;document.getElementById('us1').disabled=true;
+				
+			}
+	function showMessage2(){
+				// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s2");
+                if (change.innerHTML == "Subscribe")
+                {
+                    change.innerHTML = "Subscribed";
+					
+                }
+				document.getElementById('s2').style.backgroundColor = "violet";
+	
+	document.getElementById('s2').disabled=true; 
+	document.getElementById('us2').disabled=false;
+				
+			}
+	function showunMessage2(){
+				// Get the modal
+var modal = document.getElementById("myModall");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s2");
+                if (change.innerHTML == "Subscribed")
+                {
+                   change.innerHTML = "Subscribe";
+					
+               }
+				document.getElementById('s2').style.backgroundColor = "white";
+	
+	document.getElementById('s2').disabled=false;document.getElementById('us2').disabled=true;
+				
+			}
+	function showMessage3(){
+				// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s3");
+                if (change.innerHTML == "Subscribe")
+                {
+                    change.innerHTML = "Subscribed";
+					
+                }
+				document.getElementById('s3').style.backgroundColor = "violet";
+	
+	document.getElementById('s3').disabled=true; 
+	document.getElementById('us3').disabled=false;
+				
+			}
+	function showunMessage3(){
+				// Get the modal
+var modal = document.getElementById("myModall");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s3");
+                if (change.innerHTML == "Subscribed")
+                {
+                   change.innerHTML = "Subscribe";
+					
+               }
+				document.getElementById('s3').style.backgroundColor = "white";
+	
+	document.getElementById('s3').disabled=false;document.getElementById('us3').disabled=true;
+				
+			}
+	
+	
+	function showMessage4(){
+				// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s4");
+                if (change.innerHTML == "Subscribe")
+                {
+                    change.innerHTML = "Subscribed";
+					
+                }
+				document.getElementById('s4').style.backgroundColor = "violet";
+	
+	document.getElementById('s4').disabled=true; 
+	document.getElementById('us4').disabled=false;
+				
+			}
+	function showunMessage4(){
+				// Get the modal
+var modal = document.getElementById("myModall");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("sb1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+	//btn.onclick = function() 
+//{
+  modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+				//alert("Successfully voted");
+				var change = document.getElementById("s4");
+                if (change.innerHTML == "Subscribed")
+                {
+                   change.innerHTML = "Subscribe";
+					
+               }
+				document.getElementById('s4').style.backgroundColor = "white";
+	
+	document.getElementById('s4').disabled=false;document.getElementById('us4').disabled=true;
+				
+			}
+	</script>
+</head>
+<body>
+  <div class="full" style="overflow: scroll;height: 900px;position: relative;top: -24px;overflow-x: hidden;">
+    <div class="px-4 px-lg-0">
+      <!-- For demo purpose -->
+      <div class="container text-white py-5 text-center" >
+        <h1 class="display-4" style="
+        color: #888;
+        position: relative;
+        left: 30px;
+        top: -8px;
+    ">Brands</h1>
+        <p class="lead mb-0"> </p>
+        <p class="lead"> 
+        </p>
+      </div>
+      <!-- End -->
+    
+      <div class="pb-5" style="
+        position: relative;
+        left: 400px;
+        top: -54px;
+        height: max-content;
+        overflow-x: hidden;
+    ">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5" style="position: relative;right: 400px;">
+    
+              <!-- Shopping cart table -->
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="p-2 px-3 text-uppercase">#</div>
+                      </th>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Brand Name</div>
+                      </th>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase"> </div>
+                      </th>
+                      <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase"> </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for index in task %}
+                    <tr>
+                      <th scope="row" class="border-0">
+                        <div class="p-2">
+                          
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0">{{ forloop.counter }}</h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                          </div>
+                        </div>
+                      </th>
+                      <td class="border-0 align-middle"><img style="height: 100px;width: 100px;"  src="{{index.bpic.url}}">
+                      <h5 class="mt-3" >{{index.bname}}</h5></td>
+                      <td class="border-0 align-middle">
+                        {% if index.id|stringformat:"i" in list %}
+                        <button  class="btn btn-success btn-sm btn-block" disabled=True name = "s1" id="s1" >Subscribed</button>
+                        {% else %}
+                      <form method="POST"> 
+                        {% csrf_token %}
+                        <input name="in1"type="hidden" value="{{index.id}}">
+                       <button  class="btn btn-outline-dark btn-sm btn-block" name = "s2" id="s2">Subscribe</button>
+                      </form>
+                    </td> 
+                      {% endif %} </td>
+                      </br>
+                        {% endfor %}
+                    </tr>
+                    <!--<tr>
+                      <th scope="row">
+                        <div class="p-2">
+                          
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0">2</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                          </div>
+                        </div>
+                      </th>
+                      <td class="align-middle"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARcAAAC0CAMAAACJ8pgSAAAAjVBMVEX///8AAAD+/v6fn5/o6OixsbH19fXj4+Pw8PBbW1v7+/vd3d2Wlpbg4OCLi4t0dHQxMTFgYGB/f3+3t7eqqqqdnZ3CwsLV1dUkJCTPz89oaGhmZmaXl5fGxsZ6enrX19dTU1MmJiY/Pz8aGhpwcHBHR0c3NzcREREuLi6Ojo5EREQdHR0TExNNTU2FhYUNfE3iAAAPGklEQVR4nO1dC3eqvBINQRHx0SqI1frAR21tq///510CmSSEicp3pZWe7LXOWVWGONlMJpNkEgixsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCw+KdB0Y9ebzab9VqB/F6T0+T9VH4K8gbROpGp5y3dVbLdbk+vq0V76fMLoA0l/qADSP8atEqKBkJg4JWL70SvLw7HJhmGLV6srgp82XNHQv6je4y5QrkATX9MqsNQE229/oejoev2ChL69VirEFUv+sWLvrvRb3fezzOjOq3+e0n+67gmnLOUF/36sQZignArfnybzOfJAZ5TvyWqTabxk1RjFM8CvZjecphfHMfrYi1XcNtLMozCMDq/8Y+urxeSFbRXDIXJjz/zj4coN8SUl85yIanZtpeesU1WBy8pBBreJlOuZ6ed8O/GanuZgCIrQ4kxuxjJ8tmtQR/uepqJ9tXiBvTuBrJ8ykD8MxffjSX3g/4uf26R1GYK5X7+nzzoyNRojXjp3aJZL7kNjZQH4e24bMdUZErni6hoVv4aWB+3pFgq4XHjcmX5mfwSvEq/aEs+N7pYCJNXB766n61wPciSW+N7SFQvmP4VnIEX+S23og1q/gyp8l31B0gbWsSUKN1P5j4z43ImROWRuGADA1U++yvMLoTyGzDfzp15SRWKoIX6YPaUX0nh5rwoxHR5JT20uBTjIpGimonHzQF+mP211uwlBTciZ64pStkdMTcO/pUovHVvexG0JAHqzvs5LxJXeTmrN8jyu0jpaV1mGS/iIyFHLo/6r9z4QvmF5OWOYGoswVqoIWwaVeVlWLhhBuWX+i6S28BR5YXylqL9pnIDa6Z185Ki9c0L9hUTL8CvystRbQL+F5SPyrK28Sx4SR9MC3yRjz2lrK/6+gleIEwIicleUtdWjZe05e3FBwhb2qho9oOx5CWzTid3Iag8u8H9gXYEVt41hoqUekU3epWXBfCS1gIi5O2FsU3wMiHg7kEfvBXl8OrmJVWGV9KZGvVOvz4lqrO/ykvadT5B+RAeXwgvKNn3+VVK3oQ+F+QPdfNCBrzUxPw4U/0GPcReno28uNCXSG9xCMydaBrPi3gazOuUOR6T/FrxVfX4F+gT8dYvFCngKi+R7GOhj+7Xpk89vEB8bozpEdzCy5j/CVF6zySr4aNyLWvhxeeFvlW56SovaeR1zv/y3q/5oiJEJ327NrXwAjGdaWiMogIv4L5eK+tzc0xfCy/Q/KProhJXeQkFLzEv/1yfPrXwAiO0ZZWbKvDiVqwnzLrgQR2KWniBYNc8mYjgKi+plQzzv2A2KjSJapgLfX63HUHQPa1yUwVeqj7/bnV9auHloh56wAmfr/KyZDPQGf47L79rLxBe3NaObuVlJniBMO3WdlRNnwy18AKDXfR5BpOhijPM79/CC49vYZJxUlGf8JftZcELdbGLEGQBIJavwAtM7I5NokZ9rvEirtfCC8yN7fHL3kKQ8jYVDuYWXriBwCpG1yTKAa4rvqyPegMQUwsvEI9uscfDfhocxIsvVbnKy1TwAuMM89qB+Kl83RV+7pritF57obBcN8B+Ov3tjmwIYtzPg4zDJV54IAdrKs7aJKv+WIrdjbWUz7Ge8TQ4usjQoOGBq/ME42u8LKUj78v7L0zAUDL3i/pcmmdg862vYhK9nnkpGKglBJ/0xnhxRdMywJX2JxpqYJhUJ/nEF8yKwzTm6aLWqZj48XrmMQOYgFnj84YYL+BMjbykDU2szEGkNruYuzIWhcHqwaUJm7TU75p5ET3pHJfAePH45JFpsOm/OE+CBDCA5BIvPSBZrh49XdA6LfSrVl5SBDDRjA/VMF4guj9jGT35wthMfBRDwaV5AjlIhPFR8ikN2KjzpmZe2C9Dq3hGZ6YRXsTaxy4oE8N4SdiiiGhIEB2+mOs5EY1SWVhJzOaVOv7a7UUufKNzZKi9wPQEMquSZygswVmJhXbHGPNyAbAXuZw9wYnMBeq3Fwr9Lhp8o/Yivi153rRa3gvzVTwFLuMHNG/jFV0XikpvkJNl2EJsTmPt9sIAQUOWbVFMN8HtBbzjiRRbEmtFI0XnvCJi9BhqwUD296xMMTwoOfQAeZEw4/hgkHXxQhXFV8UlarZGzq/oGX38me6VMDhf316VPCaVwzCXfxYXYEZ3IycWVAvTpifYpTxQPMiFPpkXdF9kj3C2yQt/1iY+fL6M+j7T7AL6pJGSdcASR/elSCXLkuhBPpr2VFvZhMt7X3kemcXOeB7ZSjUjNizJxhW7iEgHBlM2t07xVACViW5OEgpV/BkY9B4xUv6cNrFCwuzgHAZE76XYp2DCR2JH5bl2MnJ3x1JGBxX6fE/kT9Neps/HxCMUypV5h3l6zV1TpnIlgYTv7tkN2+4ZMop3q57aWgRm3Abeok6mkr9MH93Zw7NW0stHHsp2F8teZ9Bb9pP8bh/p7Zk+Z87kyJ0NUvl4eGKfTm1PiQGWRyVPNZrduHpXEX6UODo2qxjRO69qEEHW5KE7n5++06C5h48m8r7JD0da6c/DdUBIeeSUZyiV9dn2e7LFUTn6BtSQ15wX6Idjkd286R7DzBIoxZhh3wbxXir16bZQuyL5t9n3fjyE+PpjHw246Zd5AbL88Az6HFZt2FMAOSEk3D+pWN26Cv7f4A/Wvc7NJtmJ2+4kCqdY9hwOb9Dr+RUeLNPnyrzWw+E/2+3tN1Ll/18ENczE4LIi/+tWxWV68G038CaFt+UfBFSV3KhHITq+UdyYCWVhYWFhYWFh8XO4IeSpEPz9HZiz1gtSMqr/R2O7f7LSCLzWMuqf9/PX/bgfxa3yaNzzmcATEzi68e3D9WYiM4tg7b5uihNEX6PFNKt6NgYNeu5e28m/6/ZnXOA39a8HWaV7x62D4nDO9zQN+p+4wMdq9kd5ISQuT30qeAuDZfeSwDaqabb6t5D3LPHzpUozfF8T2KEpj01F3oIM7aMi3lm+yN/othktwfF6lW/E3K8wR/jIYMZS8rZf2+R1P593PzeG6u9SgTkqsIv/go+hSloTx2HV7vmwiuF34mFp5ecpEkcnUX8QD7U22CeNZ4aZ/KJQqWx1rAi3WO3yhrigMyk47TmyjNQsUJkxkzWfdrb2VpwA7zs6Rog9LFWjOd2+APWQoDJfhiEinBS11phLPhXLyK1jqYTBb80eG8h8phRPel2o1soU7zwipeiWElU2CRod/iquo5xzQpXU18yaxIlILMEOWaEna+lmnprsepeiGlssRYnKjBRnxzKnWieFpbI5pIGQzHKYNLdT8kUlEiwBhBJvAwKHPN+HynqXtwtmREk3XmG/50OBJecCLQY3KTI/5L6KV/GV4fQK4bG+m9kpyeRa5zPAXSRk67KjB3ieitwkANtkSxA93IX090eG2Nr35eGuIACB945I30ldiOiWsMwdJiaYq7Rj+SFA1cgFrR9VIpfiTtIBpMGdDA5EeKVt41wvVY4NRc8VUNJ9nXMxV1WOp0z7bWDfCev7G0aMNJcEvaqksL8UnY+yrQQ/UUUmBGc7uO6td82AzY7GTVM+JEhqW5NUS8K39hMqPFPcMHuhwnmMTZqLkw0RARhK7g0ZmyJMvran+OEQwB67lsEFUMhBxXa/CntANziwgSdsKUT25j40lMOFcHtZcwH87LmrR2qBwSzuo+6PAcL1tYkXqDl+egfEPompfPBOTZuJ4THIp8m70MmYYTU2jBD6q+z62TjPAt1dDVusagRshTaezXG5G6HIXxoghrl4eN3DAZq/+UgBnsOBr3mIDUNmXvwN9HfNAQUr//r/SzJe4DMSxpOAHxKHS53NfQB78vCDox8UohetS2d5WkSTHC8E8hWOlqsGZVxa6Ti9XwboXOdUo//dsA6Jyk60zig94B1S1BS/S+UoAN/ueCfwNZPrx249DiQvNep8gNCxKbzQm3gpnhogUnXLqyn4cFyxl+YA/EvV/f4XYt+SJP1oGi/yXBbjhH0QtTXkXfpU/zoyvEqEihF1Y/ojIqcJDPFL+rAdHd3MWso5H8ZtzjJ+aYp/ISLeNfcVpeTMfMiw0L82H9j1E7HAnUHhqPa5kRf9lAETLxdfPJChURNTfOF5Y5jbRRqMgRfzyJMvpjw3qBXJyX7cyCnRcxGBgIn+9dDQSRGPt8RmLVLDrLbxDHP9XFqTvRhHhZA5U+l0+t8H1zoxXQ/0lN78rQG6vbwbllnk+tS9j0SqGZDZYuwtYClVHMZUqD4sICWmARY0o0Oj3K70H0NTdiB0s9mpwiWRq+8SiEX5zYLH9f4yDKmpJ98Cg1yHVA/jZBwk4l07q/fhAAtri2sLa9iKJCwnGF4nJwfsp0b10gzQIznl1wgzyLdMpS5IFwgMqQ7yZjA20xHJjwoqI1pDgKFmuWgJMCIz5mC6FdzPC3qi2QODypfU4Q+dKhYVaVdEUq9pR40Ifpo0V5dDMRh86KekRWljZjjK2Nmaag1bKF5Mb5F8WDBtRYKdafFePPbnwgmOgi5s9obxIFKbazjO8Scg8i33hvYgBo/dgJ+xpWZpoivPVDoXJ6lR9/qQmriYZDG8AktkPbGdVvk9ciSAv15ByZY29HSPDjVV1fDsFYFXXkU5/2Doo+UOlQrva3k0yGc7EpkbBoFtNgEld3EhL1dgn+V+pgqvm3s8yN0fXx002UXZ5TclvtyrNy+/aSr958stoqemLDNioOp8JbpgqmysccbyHNgTurMzljvynxu9jZoSTzly4YS92SrADm3YBggvg7kU2LQuJlM1ACoxzitjBtYWs2MsKUbMm0f4IUFUiHfUfbUvzeyKBLKqz9Uqn/Kjryn/l/33pNGyz9mgcl02WL6qAtnmtiYTkz/1YbHa3agwadJr62smSTRVK90J58WTPkb5JuzmI3Z0fIzOE9d1z6+mw0823UxgOD+ULt36XrqHByWtiwfeVMLhwsvJmwa2XrS5Dy0L9OzzhoJVxCsvyVfHqmPK+2gw/IV+VH0Rx070cVHg3KAl+puRncEWGv3MKcw6mWJ/rOKAvVPhb4DVygv376U6z9u+2AwQhKuvkkA3ahHS8JjFBCrOuezE7irZPm9ePrbJyo0HQgCq3Vq6424ucHpahD3t/j+Oqw70z3nY69Ce/L9HgBH0+nGz/6C9WFhYWFhYWFhYWFhYWFg0Hv8DK4KncYzW9kQAAAAASUVORK5CYII=">
+                        <h5 style="position:relative;left: 100px;">Gucci</h5></td>
+                      <td class="align-middle"><button class="btn btn-outline-dark btn-sm btn-block" id="s2" onclick="showMessage2();this.disabled=true;">Subscribe</button></td>
+                      <td class="align-middle">
+                      </td>
+                    </tr>
+                     <tr>
+                      <th scope="row">
+                        <div class="p-2">
+                           
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"> 3</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                          </div>
+                        </div>
+                        </th><td class="align-middle"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBAxuFa4Mk6XljPd4ueN2mw5zb880g3_iHXtlcXYZco-jHyWfg&amp;usqp=CAU">
+                          <h5 style="position:relative;left: 100px;">Burberry</h5></td>
+                        <td class="align-middle"><button class="btn btn-outline-dark btn-sm btn-block" id="s3" onclick="showMessage3();this.disabled=true;">Subscribe</button></td>
+                        
+                        </td>
+                    </tr>
+                     <tr>
+                      <th scope="row">
+                        <div class="p-2">
+                           
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"> 4</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                          </div>
+                        </div>
+                        </th><td class="align-middle"><img src="data:image/png;base64,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">
+                          <h5 style="position:relative;left: 100px;">Calvin Klein</h5></td>
+                        <td class="align-middle"><button class="btn btn-outline-dark btn-sm btn-block" id="s4" onclick="showMessage4();this.disabled=true;">Subscribe</button></td>
+                       
+                    </tr>-->
+                  </tbody>
+                </table>
+              </div>
+              <!-- End -->
+            </div>
+          </div>
+    
+           
+    
+      <!-- TODO: Missing CoffeeScript 2 -->
+    
+      <script type="text/javascript">//<![CDATA[
+    
+    
+    
+    
+    
+      //]]></script>
+    
+      <script>
+        // tell the embed parent frame the height of the content
+        if (window.parent && window.parent.parent){
+          window.parent.parent.postMessage(["resultsFrame", {
+            height: document.body.getBoundingClientRect().height,
+            slug: ""
+          }], "*")
+        }
+    
+        // always overwrite window.name, in case users try to set it manually
+        window.name = "result"
+      </script>
+    
+        <script>
+          let allLines = []
+    
+          window.addEventListener("message", (message) => {
+            if (message.data.console){
+              let insert = document.querySelector("#insert")
+              allLines.push(message.data.console.payload)
+              insert.innerHTML = allLines.join(";\r")
+    
+              let result = eval.call(null, message.data.console.payload)
+              if (result !== undefined){
+                console.log(result)
+              }
+            }
+          })
+        </script>
+      <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" style="margin-bottom: 20px;" >×</span>
+        <div class="alert alert-success"><i class="mr-2 fas fa-check"></i>Subscribed</div>
+      </div>
+      </div>
+      
+      <div id="myModall" class="modal">
+    
+      <div class="modal-content">
+        <span class="close">×</span>
+        <p>Unsubscribed</p>
+      </div>
+        </div>
+    
+    
+    
+    </div></div></div></div></body></html>
+{% endblock %}

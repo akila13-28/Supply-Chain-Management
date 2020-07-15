@@ -1,0 +1,69 @@
+{%load static%}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Profile</title>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #620a82;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            /* background-image: url(sarika1.jpg) no-repeat; */
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body style="background-image:url(/static/images/sarika1.jpg)">
+    <div class="box">
+        <img src="{% static 'images/sarika2.jpg' %}" alt="" class="box-img">
+        <h1>Los Angels
+        </h1>
+        <h5>
+            Designer - zara</h5>
+        <p>
+            Los Angels is a former indian model turned costume designer and stylist, widely known for his works in peter england brand.she received appreciation for her glamorous ensembles using traditional colours,craftmanship,textures and embroideries presented
+            at her first runway show in november 1999. </p>
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+        </ul>
+        <form action="delete.html">
+            <input type="submit" class="button" value="Delete Profile">
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

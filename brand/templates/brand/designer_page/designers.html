@@ -1,0 +1,55 @@
+{% extends 'brand/home_page/main.html' %}
+{% load static %}
+{% block content %}
+<h1 style="font-size:35px;color:white;background-color:black; text-align:center;font-family:'Times New Roman';padding:13px;">Designers Dashboard</h1>
+<section class="team-section">
+    <div class="container">
+    
+        <div class="row">
+            <div class="team-items">
+                {% for memb in membs %}
+                 <div class="item">
+                     <a href="{% url 'profile' %}" ><img src="{% static 'images/img1.jpg' %}"  height="250px" alt="team" /></a>
+                     <div class="inner">
+                         <div class="info">
+                              <h5>{{memb.name}}</h5>
+                              <p>{{memb.designation}}</p>
+                              <div class="social-links">
+                                  <a href="{{memb.facebook}}"><span class="fa fa-facebook"></span></a>
+                                  <a href=""><span class="fa fa-twitter"></span></a>
+                                  <a href="{{memb.insta}"><span class="fa fa-linkedin"></span></a>
+                                  <a href=""><span class="fa fa-youtube"></span></a>
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+                 {% endfor %}
+        
+           <div class="item">
+                     <a href="{% url 'dregister' %}" ><img src="{% static 'images/profile.jpg' %}"  height="250px" alt="team" /></a>
+                     <div class="inner">
+                         <div class="info">
+                              <h5>New Member</h5>
+                              <p>Add now!</p>
+                              <div class="social-links">
+                                  <a href=""><span class="fa fa-facebook"></span></a>
+                                  <a href=""><span class="fa fa-twitter"></span></a>
+                                  <a href=""><span class="fa fa-linkedin"></span></a>
+                                  <a href=""><span class="fa fa-youtube"></span></a>
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+ </section>
+
+
+{% endblock %}

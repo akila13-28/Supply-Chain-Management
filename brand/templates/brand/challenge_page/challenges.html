@@ -1,0 +1,51 @@
+{% extends 'brand/home_page/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+.cls{
+    width:300px;
+    font-size:25px;
+    margin-left: 37%;
+    border: 20px;
+    margin-bottom: 30px;
+    padding: 20px 0px;
+}
+a:hover{
+    text-decoration: none ;
+}
+</style>
+<h1 style="font-size:35px;color:white;background-color:black; text-align:center;font-family:'Times New Roman';padding:13px;"> Challenges Dashboard</h1>
+<link rel="stylesheet" href="{% static 'css/challenge_main.css' %}"/>
+<br/><br/>
+<div class="grid">
+    {% csrf_token %}
+    {% for item in vals %}
+    <div class="grid__item">
+        <div class="cards">
+             <div class="card__content">
+                 <form method="POST">
+                    {% csrf_token %}  
+                 <h1 class="card__header" style="font-family: 'Times New Roman';">
+                    <input type="hidden" name=name value={{item.cname}}> {{item.cname}}
+                 </h1>
+                 <p class="card__text" style="font-family: 'Times New Roman';">
+                    <input type="hidden" name=desc value={{item.cdesc}}>{{item.cdesc}}
+                 </p>
+                 <button class="card__btn" type="submit" >
+                        View Status<span>&rarr;</span> 
+                 </button>
+                 </form>
+             </div>
+        </div>
+        </div>
+        {% endfor %}
+   
+
+</div>
+<br/>
+
+<a href="{% url 'create_challenge' %}"class="cls w3-button w3-black w3-round w3-hover-purple"  style="font-family: 'Times New Roman';">Create Challenges</a>
+
+
+
+{% endblock %}

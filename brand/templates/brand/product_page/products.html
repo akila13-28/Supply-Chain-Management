@@ -1,0 +1,42 @@
+{% extends 'brand/home_page/main.html' %}
+{% load static %}
+{% block content %}
+<h1 style="font-size:35px;color:white;background-color:black; text-align:center;font-family:'Times New Roman';padding:13px;"> Products Dashboard</h1>
+<!-- <h1 class="w3-hide-small">Products</h1> -->
+
+<!---------------------------------------->
+
+<section class="team-section">
+    <div class="container">
+        <div class="row">
+            <div class="team-items">
+                {% for i in prds %}
+                 <div class="item"><!--/static/images/logo/{{i.images}}-->
+                     <a href="{% url 'profile' %}" ><img src="{{i.images.url}}"  height="350px" alt="team" /></a>
+                     <div class="inner">
+                         <div class="info">
+                              <h5>Name:{{i.name}}</h5>
+                              <p>Price:{{i.price}}</p>
+
+                         </div>
+                     </div>
+                 </div>
+                 {% endfor %}
+                 <div class="item">
+                    <a href="{% url 'addproduct' %}" ><img src="{% static 'images/add.png' %}"  height="350px" alt="team" /></a>
+                    <div class="inner">
+                        <div class="info">
+                             <h5>New Product</h5>
+                             <p>Add now!</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+             
+
+{% endblock %}

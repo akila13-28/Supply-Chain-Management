@@ -1,0 +1,188 @@
+{%load static %}
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Crevalto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <noscript><link rel="stylesheet" href="{% static '/css/noscript.css' %}" ></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1><a href="{% url 'indexreq' %}">Crevalto</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="{% url 'indexreq' %}">Home</a></li>
+                    <li><a href="{% url 'profilereq' %}">Profile</a></li>
+                    <li><a href="{% url 'editprofilereq' %}">Edit Profile</a></li>
+                    <li><a href="{% url 'samplereq' %}">Challenges</a></li>
+                    <li><a href="{% url 'timelinereq' %}">Challenges History</a></li>
+                    <li><a href="{% url 'logoutreq' %}">Logout</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+                <div class="logo"><img src="{% static '/images/pic9.jpg' %}" height="130" width="130" alt="" /></div>
+                <h2>Crevalto</h2>
+                <p> Design Management Platform </p>
+            </div>
+        </section>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+
+            <!-- One -->
+            <section id="one" class="wrapper spotlight style1">
+                <div class="inner">
+                    <a href="#" class="image"><img src="{% static '/images/pic01.jpg' %}" alt="" /></a>
+                    <div class="content">
+                        <h2 class="major">Our Vision</h2>
+                        <p>We envision a powerful community of value creation networks, empowered by cutting-edge digital technologies. We believe in the potential of meaningful synergies and exciting possibilities it promises for decentralized value creation.
+                            Our solutions reimagine the paradigm of breakthrough innovations to pave the way for the superior value generation.</p>
+                        <a href="#" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two -->
+            <section id="two" class="wrapper alt spotlight style2">
+                <div class="inner">
+                    <a href="#" class="image"><img src="{% static '/images/pic02.jpg' %}" alt="" /></a>
+                    <div class="content">
+                        <h2 class="major">Redefining Innovations</h2>
+                        <p>Crevalto connects brands with a decentralized network of stakeholders for superior value creation through effective stakeholder engagement in the fashion industry. We provide a safe haven for sophisticated innovation without the
+                            perils of industrial espionage.Break silos and innovate without barriers. Coming soon!</p>
+                        <a href="#" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Three -->
+            <section id="three" class="wrapper spotlight style3">
+                <div class="inner">
+                    <a href="#" class="image"><img src="{% static '/images/pic03.jpg' %}" alt="" /></a>
+                    <div class="content">
+                        <h2 class="major">About Us</h2>
+                        <p>SteerClear is a brainchild of Aditya, emerging from a burning passion for decentralized innovation networks. Teaming up with Niranjan, his high-school classmate turned business partner, this longstanding journey began with a common
+                            aspiration to provide an avant-garde ideation platform using distributed human networks capabilities, with a garage innovation spirit. </p>
+                        <a href="#" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Four -->
+            <section id="four" class="wrapper alt style1">
+                <div class="inner">
+                    <h2 class="major">What We Do The Best</h2>
+                    <section class="features">
+                        <article>
+                            <a href="#" class="image"><img src="{% static '/images/pic04.jpg' %}" alt="" /></a>
+                            <h3 class="major">1</h3>
+                            <p>CONNECTCREATIVE MINDS & INSPIRE PARTICIPATION</p>
+                            <a href="#" class="special">Learn more</a>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="{% static '/images/pic05.jpg' %}" alt="" /></a>
+                            <h3 class="major">2</h3>
+                            <p>REDUCE COST, RISK & LATENCY OF INNOVATION</p>
+                            <a href="#" class="special">Learn more</a>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="{% static '/images/pic06.jpg' %}" alt="" /></a>
+                            <h3 class="major">3</h3>
+                            <p>FACILITATE STAKEHOLDER ENGAGEMENT TO MAXIMISE VALUE CREATION</p>
+                            <a href="#" class="special">Learn more</a>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="{% static '/images/pic07.jpg' %}" alt="" /></a>
+                            <h3 class="major">4</h3>
+                            <p>INSTITUTE COMPLEX GOVERNANCE MECHANISMS FOR EFFECTIVE KNOWLEDGE BROKERING</p>
+                            <a href="#" class="special">Learn more</a>
+                        </article>
+                    </section>
+                    <ul class="actions">
+                        <li><a href="#" class="button">Browse All</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="inner">
+                <h2 class="major">Get in touch</h2>
+                <p>Stay Connected!</p>
+                <form method="post" action="#">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </form>
+                <ul class="contact">
+                    <li class="icon solid fa-home">
+                        PH Road, Kilpauk <br /> Chennai - 600010 INDIA<br /> Paris, FRANCE
+                    </li>
+                    <li class="icon solid fa-phone">IND: +91-7338709583, FRA: +33-0658895685</li>
+                    <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                    <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+                    <li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+                    <li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; STEERCLEAR TECH SOLUTIONS. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static '/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static '/js/browser.min.js' %}"></script>
+    <script src="{% static '/js/breakpoints.min.js' %}"></script>
+    <script src="{% static '/js/util.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+
+</html>

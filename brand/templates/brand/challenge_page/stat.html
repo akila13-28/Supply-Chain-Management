@@ -1,0 +1,30 @@
+{% extends 'brand/home_page/main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/status.css' %}">
+<body style="background-image:url(/static/images/portfolio.jpg)"></body>
+	<h1 class="site-heading">
+		<span class="site-heading text-primary"></span>    
+	</h1>
+	<section>
+      
+        <div class="cta-inner" >
+            <h2 class="section-heading">
+              <span class="section-heading">Challenge Details</span><hr>
+			</h2>
+            <ul>
+			{% csrf_token %}
+			<li>Challenge name: {{datas.cname}}</li>
+			<li>Description: {{datas.cdesc}}</li>
+			<li>Total participants: {{datas.cparticipants}}</li>
+			<li>Designers Allowed: {{datas.cdesigners}}</li>
+			<li>Date: {{datas.cdobegin}}</li>
+			<li>State: Not yet started </li>
+			
+			</ul>
+		</div>
+    </section>
+</body>
+{% endblock %}
+

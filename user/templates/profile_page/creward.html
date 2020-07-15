@@ -1,0 +1,299 @@
+{% extends 'home_page/main.html' %}
+{% block content %}
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bootstrap shopping cart</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  
+  <style id="compiled-css" type="text/css">
+      /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+  background: #654ea3;
+    background: linear-gradient(to right, #e96443, #904e95);
+    min-height: 100vh
+}
+::-webkit-scrollbar {
+    width: 0.25rem;
+    
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color:rgb(99,39,120);
+}
+h1{
+  color: black;
+}
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: payload,
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "system")
+            }
+          }
+        }(window.console))
+
+        window.console = console
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+  <div class="full" style="overflow: scroll;height: 900px;position: relative;top: -24px;overflow-x: hidden;">
+    <div class="px-4 px-lg-0"style="position: relative;height: 500px;">
+  <!-- For demo purpose -->
+  <div class="container text-white py-5 text-center">
+    <h1 class="display-4" style="text-align: center;color:#fff;">Reward History</h1>
+    <p class="lead mb-0">  </p>
+     
+  </div>
+  <!-- End -->
+
+  <div class="pb-5"style="height: max-content;width: 1000px;position:relative;left:480px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">Challenge Name</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Points Gained</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Rewards</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Reward Code</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="border-0">
+                    <div class="p-2">
+                       
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">Challenge1 </h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="border-0 align-middle"><strong>100</strong></td>
+                  <td class="border-0 align-middle"><strong>Silver</strong></td>
+                  <td class="border-0 align-middle">34562</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                       
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">Challenge2</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle"><strong>200</strong></td>
+                  <td class="align-middle"><strong>Gold</strong></td>
+                  <td class="align-middle">59832
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">Challenge3</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                      </div>
+                    </div>
+                    </th><td class="align-middle"><strong>150</strong></td>
+                    <td class="align-middle"><strong>silver</strong></td>
+                    <td class="align-middle">95178
+                    </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">Challenge4</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                      </div>
+                    </div>
+                    </th><td class="align-middle"><strong>75</strong></td>
+                    <td class="align-middle"><strong>bronze</strong></td>
+                    <td class="align-middle">04286
+                    </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">Challenge5</h5><span class="text-muted font-weight-normal font-italic"> </span>
+                      </div>
+                    </div>
+                    </th><td class="align-middle"><strong>250</strong></td>
+                    <td class="align-middle"><strong>Gold</strong></td>
+                    <td class="align-middle">42973
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+
+      <div class="row py-5 p-4 bg-white rounded shadow-sm">
+        <div class="col-lg-6">
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"> Reward code</div>
+          <div class="p-4">
+            <p class="font-italic mb-4">If you have a reward code, please enter it in the box below</p>
+            <div class="input-group mb-4 border rounded-pill p-2">
+              <input type="text" placeholder="Apply reward" aria-describedby="button-addon3" class="form-control border-0">
+              <div class="input-group-append border-0">
+                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply for the reward</button>
+              </div>
+            </div>
+          </div>
+           
+          
+        
+         
+       <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Reward summary </div>
+          <div class="p-4">
+            
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total Number of Gold Coins </strong><strong> </strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total Number of Silver Coins</strong><strong> </strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total Number of Bronze</strong><strong> </strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total Coins</strong>
+                <h5 class="font-weight-bold"></h5>
+              </li>
+            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Collect Rewards</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "4op6qxtz"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+
+
+</div></div></body>
+</html>
+{% endblock %}

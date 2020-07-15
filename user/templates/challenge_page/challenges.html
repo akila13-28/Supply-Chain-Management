@@ -1,0 +1,2077 @@
+{% extends 'home_page/main.html' %}
+{% block content %}
+<!---available--->
+
+<html>
+<head>
+<style>
+
+
+heading{
+background-color: #9966CC;
+  font-family: arial;
+  color:white;
+  border-color: red;
+  border-style: double;
+  border-width: 1px 1px 1px 1px;
+}
+
+body
+{
+  background-color: white;
+  font-family: arial
+}
+
+.fl-left{float: left}
+
+.fl-right{float: right}
+
+.container1
+{
+  width: 90%;
+  margin:  100px auto
+}
+
+h1
+{
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 10px solid #fec500;
+  padding-left: 10px;
+  margin-bottom: 30px
+}
+
+.row{overflow: hidden}
+
+.card
+{
+  display: table-row;
+  width: 49%;
+  background-color: #9966CC;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative
+}
+.card + .card{margin-left: 2%}
+
+.date
+{
+  display: table-cell;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  border-right: 2px dashed #dadde6
+}
+
+.date:before,
+.date:after
+{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  top: -15px ;
+  right: -15px;
+  z-index: 1;
+  border-radius: 50%
+}
+
+.date:after
+{
+  top: auto;
+  bottom: -15px
+}
+
+.date time
+{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.date time span{display: block}
+
+.date time span:first-child
+{
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 250%
+}
+
+.date time span:last-child
+{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: -10px
+}
+
+.card-cont
+{
+  display: table-cell;
+  width: 75%;
+  font-size: 85%;
+  padding: 10px 20px 60px 60px
+}
+
+.card-cont h3
+{
+  color: white;
+  font-size: 130%
+}
+
+
+
+.card-cont > div
+{
+  display: table-row
+}
+
+.card-cont .even-date i,
+.card-cont .even-info i,
+.card-cont .even-date time,
+.card-cont .even-info p
+{
+  display: table-cell
+}
+
+.card-cont .even-date i,
+.card-cont .even-info i
+{
+  padding: 5% 5% 0 0
+}
+
+.card-cont .even-info p
+{
+  padding: 30px 50px 0 0
+}
+
+.card-cont .even-date time span
+{
+  display: block
+}
+
+.card-cont a
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:red;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.row:last-child .card:first-child .card-cont a
+{
+  background-color: red;
+}
+
+.row:last-child .card:last-child .card-cont a
+{
+  background-color: red;
+}
+
+@media screen and (max-width: 860px)
+{
+  .card
+  {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-bottom: 10px
+  }
+  
+  .card + .card{margin-left: 0}
+  
+  .card-cont .even-date,
+  .card-cont .even-info
+  {
+    font-size: 75%
+  }
+}
+
+                    
+</style>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+<script type='text/javascript'></script>
+</head>
+<body >    
+</nav>
+<section class="container1">
+<h1>Challenges</h1>
+  <div class="row">
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+  <div class="row">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>27</span><span>Apr</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>18</span><span>Mar</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+	
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge Name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+      <article class="card fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small>brandname</small>
+        <h3>Challenge name</h3>
+        <div class="even-date">
+         <i class="fa fa-calendar"></i>
+         <time>
+           <span>wednesday 28 december 2014</span>
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <a href="#">View</a>
+      </section>
+    </article>
+  </div>
+</div>
+</body>
+
+
+
+<!---Accepted--->
+
+
+<head>
+<!---<link href="css-circular-prog-bar.css" rel="stylesheet">--->
+<style>
+
+heading{
+background-color: #9966CC;
+  font-family: arial;
+  color:white;
+  border-color: red;
+  border-style: double;
+  border-width: 1px 1px 1px 1px;
+}
+
+
+
+a{
+  color: rgb(99,39,120);
+}
+
+.fl-left{float: left}
+
+.fl-right{float: right}
+
+.container1
+{
+  width: 90%;
+  margin:  100px auto
+}
+
+h1
+{
+  
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 10px solid #fec500;
+  padding-left: 10px;
+  margin-bottom: 30px
+}
+
+.row{overflow: hidden}
+
+.card1
+{
+  display: table-row;
+  width: 49%;
+  background-color:#9ACD32;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative
+}
+
+.card1 + .card1{margin-left: 2%}
+
+.date
+{
+  display: table-cell;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  border-right: 2px dashed #dadde6
+}
+
+.date:before,
+.date:after
+{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  top: -15px ;
+  right: -15px;
+  z-index: 1;
+  border-radius: 50%
+}
+
+.date:after
+{
+  top: auto;
+  
+}
+
+.date time
+{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.date time span{display: block}
+
+.date time span:first-child
+{
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 250%
+}
+
+.date time span:last-child
+{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: -10px
+}
+
+.card1-cont
+{
+  display: table-cell;
+  width: 75%;
+  font-size: 85%;
+  padding: 10px 20px 60px 60px
+}
+
+.card1-cont h3
+{
+  color: white;
+  font-size: 130%
+}
+
+
+.card1-cont > div
+{
+  display: table-row
+}
+
+.card1-cont .even-date i,
+.card1-cont .even-info i,
+.card1-cont .even-date time,
+.card1-cont .even-info p
+{
+  display: table-cell
+}
+
+.card1-cont .even-date i,
+.card1-cont .even-info i
+{
+  padding: 5% 5% 0 0
+}
+
+.card1-cont .even-info p
+{
+  padding: 30px 50px 0 0
+}
+
+.card1-cont .even-date time span
+{
+  display: block
+}
+
+.card1-cont expired
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:red;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+.card1-cont active
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:green;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.card1-cont inactive
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:#FFC200;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.row:last-child .card1:first-child .card1-cont a1
+{
+  background-color: red;
+}
+
+.row:last-child .card1:last-child .card1-cont a1
+{
+  background-color: red;
+}
+
+@media screen and (max-width: 860px)
+{
+  .card1
+  {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-bottom: 10px
+  }
+  
+  .card1 + .card1{margin-left: 0}
+  
+  .card1-cont .even-date,
+  .card1-cont .even-info
+  {
+    font-size: 75%
+  }
+}
+rig{
+    position: relative;
+     top:-12px;/* This will move it 20px up */
+    right: -280px; /* This will move it 20px to the right */
+}
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color:rgb(99, 39, 120);
+}                 
+</style>
+</head>
+<body style="overflow: scroll;overflow-x: hidden;">
+<section class="container1">
+<h1>Accepted Challenges</h1>
+  <div class="row">
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>23</span><span>feb 2017</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+	
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+<p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+
+      </section>
+
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+         <p>
+            Challenge Desc......
+          </p> 
+        </div>
+        <inactive>Inactive</inactive>
+      </section>
+    </article>
+  </div>
+  <div class="row">
+    <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+        
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+<p>
+            Challenge Desc......
+          </p>
+          
+        </div>
+        <expired>Expired</expired
+      </section>
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+       <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+         <p>
+            Challenge Desc......
+          </p> 
+        </div>
+        <inactive>Inactive</inactive>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+         <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <expired>Expired</expired>
+      </section>
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <inactive>Inactive</inactive>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+      <article class="card1 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>25</span><span>sep 2018</span>
+        </time>
+      </section>
+      <section class="card1-cont">
+        <small>brandname</small>
+
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Challenge Desc......
+          </p>
+        </div>
+        <active>Active</active>
+      </section>
+    </article>
+  </div>
+</div>
+</body>
+
+
+<!--completed-->
+
+    <style type="text/css">
+
+/*-------------------
+-----News Styles-----
+---------------------*/    
+.timeline{
+    position:relative;
+    margin-bottom:100px;
+    z-index:1;
+}
+
+.timeline:before{
+    display:block;
+    content:"";
+    position:absolute;
+    width:50%;
+    height:100%;
+    left:1px;
+    top:0;
+    border-right:1px solid #5CC9DF;
+    z-index:-1;
+} 
+
+.timeline:after{
+    display:block;
+    content:"";
+    position:absolute;
+    width:50%;
+    height:100px;
+    left:1px;
+    bottom:-105px;
+    border-right:1px dashed #5CC9DF;
+    z-index:-1;
+} 
+
+.timeline .date-title{
+    text-align:center;
+    margin:70px 0 50px;
+}
+
+.timeline .date-title span{
+    padding:15px 30px;
+    font-size:41px;
+    font-weight:400;
+    color:#fff;
+    background:#5CC9DF;
+    border-radius:5px;
+}
+
+.news-item {
+    padding-bottom:45px;
+}
+
+.news-item.right {
+    float:right;
+    margin-top:40px;
+}
+
+.news-item .news-content {
+    margin:20px 30px 0 0;
+    position:relative;
+    padding:30px;
+    padding-left:100px;
+    background:#f5f5f5;
+    border-radius:10px;
+    box-shadow:-5px 5px 0 rgba(0,0,0,0.08);
+    -webkit-transition:all .3s ease-out;
+    transition:all .3s ease-out;
+}
+
+.news-item:hover .news-content {
+    background:#5CC9DF;
+    color:#fff;
+}
+
+.news-item.right .news-content {
+    margin:20px 0 0 30px;
+    box-shadow:5px 5px 0 rgba(0,0,0,0.08);
+}
+
+.news-item .news-content:after {
+    display:block;
+    content:"";
+    position:absolute;
+    top:50px;
+    right:-40px;
+    width:0px;
+    height:0px;
+    background:transparent;
+    border:20px solid transparent;
+    border-left:20px solid #f5f5f5;
+    -webkit-transition:border-left-color .3s ease-out;
+    transition:border-left-color .3s ease-out;
+}
+
+.news-item.right .news-content:after {
+    position:absolute;
+    left:-40px;
+    right:auto;
+    border-left:20px solid transparent;
+    border-right:20px solid #f5f5f5;
+    -webkit-transition:border-right-color .3s ease-out;
+    transition:border-right-color .3s ease-out;
+}
+
+.news-item:hover .news-content:after {
+    border-left-color:#5CC9DF;
+}
+
+.news-item.right:hover .news-content:after {
+    border-left-color:transparent;
+    border-right-color:#5CC9DF;
+}
+
+.news-item .news-content:before {
+    display:block;
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    right:-55px;
+    top:60px;
+    background:#5CC9DF;
+    border:3px solid #fff;
+    border-radius:50%;
+    -webkit-transition:background .3s ease-out;
+    transition:background .3s ease-out;
+}
+
+.news-item.right .news-content:before {
+    left:-55px;
+    right:auto;
+}
+
+.news-content .date {
+    position:absolute;
+    width:80px;
+    height:80px;
+    left:10px;
+    text-align:center;
+    color:#5CC9DF;
+    -webkit-transition:color .3s ease-out;
+    transition:color .3s ease-out;
+}
+
+.news-item:hover .news-content .date {
+    color:#fff;
+}
+
+.news-content .date p{
+    margin:0;
+    font-size:39px;
+    font-weight:600;
+    line-height:48px;
+}
+
+.news-content .date small{
+    margin:0;
+    font-size:22px;
+    font-weight:300;
+    line-height:24px;
+}
+
+.news-content .news-title{
+    font-size:24px;
+    font-weight:300;
+}
+
+.news-content p{
+    font-size:16px;
+    line-height:24px;
+    font-weight:300;
+    letter-spacing:0.02em;
+    margin-bottom:10px;
+margin-left: 43px;
+}
+
+.news-content .read-more,
+.news-content .read-more:hover,
+.news-content .read-more:active,
+.news-content .read-more:focus{
+    padding: 10px 45px;;
+    text-decoration:none;
+    font-size:16px;
+    color:#7A7C7F;
+    line-height:24px;
+}
+
+.news-item:hover .news-content .read-more,
+.news-item:hover .news-content .read-more:hover,
+.news-item:hover .news-content .read-more:active,
+.news-item:hover .news-content .read-more:focus{
+    color:#fff;
+}
+
+.news-content .read-more{
+    -webkit-transition:padding .3s ease-out;
+    transition:padding .3s ease-out;
+}
+
+.news-content .read-more:hover {
+    padding-left:7px;
+}
+
+.news-content .read-more:after{
+    content:'\f054';
+    padding-left:15px;
+    font-family:'FontAwesome';
+    font-size:21px;
+    line-height:21px;
+    color:#5CC9DF;
+    vertical-align:middle;
+    -webkit-transition:padding .3s ease-out;
+    transition:padding .3s ease-out;
+}
+
+.news-content .read-more:hover:after{
+    padding-left:20px;
+}
+
+.news-item:hover .news-content .read-more:after{
+    color:#fff;
+}
+
+.news-content .news-media{
+    position:absolute;
+    width:80px;
+    bottom:-45px;
+    right:40px;
+    border-radius:8px;
+}
+
+
+
+.news-content .news-media a{
+    display:block;
+	text-decoration:none;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    mask-image: -webkit-radial-gradient(circle, white, black);
+}
+
+
+
+
+.news-content .news-media a:after{
+    content:'\f065';
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    font-family:FontAwesome;
+    font-size:32px;
+    line-height:80px;
+    text-align:center;
+    color:#5CC9DF;
+    -webkit-transform:scale(0);
+    transform:scale(0);
+    opacity:0;
+    -webkit-transition:all .2s ease-out .1s;
+    transition:all .2s ease-out .1s;
+}
+
+.news-content .news-media.video a:after{
+    content:'\f04b';
+}
+
+.news-content .news-media a:hover:after{
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    opacity:1;
+}
+
+.news-content .news-media.gallery{
+    box-shadow:4px 4px 0 #bbb,8px 8px 0 #ddd;
+}
+
+h1
+{
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 10px solid #fec500;
+  padding-left: 10px;
+  margin-bottom: 30px
+}                                    
+    </style>
+</head>
+<body>
+
+
+<div class="container1 bootstrap snippet">
+
+    <section id="news" class="white-bg padding-top-bottom">
+        <div class="container1 bootstrap snippet">
+<h1>Completed Challenges</h1>
+            <div class="timeline">
+                <div class="date-title">
+                    <span>March 2014</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>28</p>
+                                <small>Fri</small>
+                            </div>
+                            <h2 class="news-title">Challenge 1</h2>
+                            <div class="news-media">
+                                <a class="colorbox cboxElement" href="#">
+                                    
+                                </a>
+                            </div>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>27</p>
+                                <small>Thu</small>
+                            </div>
+                            <h2 class="news-title">Challenge 2</h2>
+                            <div class="news-media gallery">
+                               
+                                <a class="colorbox cboxElement" href="#"></a>
+                            </div>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>26</p>
+                                <small>Wed</small>
+                            </div>
+                            <h2 class="news-title">Challenge 3</h2>
+                            <div class="news-media video">
+                                
+                            </div>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>25</p>
+                                <small>Tue</small>
+                            </div>
+                            <h2 class="news-title">Challenge 4</h2>
+                            <div class="news-media gallery">
+                                
+                                <a class="colorbox cboxElement" href="#"></a>
+                            </div>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="date-title">
+                    <span>February 2014</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>27</p>
+                                <small>Thu</small>
+                            </div>
+                            <h2 class="news-title">Challenge 5</h2>
+                            <div class="news-media video">
+                                
+                            </div>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>24</p>
+                                <small>Mon</small>
+                            </div>
+                            <h2 class="news-title">Challenge 6</h2>
+                            <p>Challenge Desc....</p>
+                            <a class="read-more" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+
+
+<!---Won--->
+
+
+
+<head>
+<style>
+heading{
+background-color: #9966CC;
+  font-family: arial;
+  color:white;
+ border-color: red;
+  border-style: double;
+  border-width: 1px 1px 1px 1px;
+
+}
+
+body
+{
+  background-color: white;
+  font-family: arial
+}
+
+.fl-left{float: left}
+
+.fl-right{float: right}
+
+.container2
+{
+  width: 100%;
+  margin:  100px auto
+}
+
+h1
+{
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 10px solid #fec500;
+  padding-left: 10px;
+  margin-bottom: 30px
+}
+
+.row{
+overflow: hidden;
+margin-bottom: 20px;
+}
+
+.card2
+{
+  display: table-row;
+  width: 49%;
+  background-color: #FF7F50;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative
+}
+
+.card2 + .card2{margin-left: 2%}
+
+.date
+{
+  display: table-cell;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  border-right: 2px dashed #dadde6
+}
+
+.date:before,
+.date:after
+{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  top: -15px ;
+  right: -15px;
+  z-index: 1;
+  border-radius: 50%
+}
+
+.date:after
+{
+  top: auto;
+
+}
+
+.date time
+{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.date time span{display: block}
+
+.date time span:first-child
+{
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 250%
+}
+
+.date time span:last-child
+{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: -10px
+}
+
+.card2-cont
+{
+  display: table-cell;
+  width: 75%;
+  font-size: 85%;
+  padding: 10px 20px 60px 60px
+}
+
+.card2-cont h3
+{
+  color: white;
+  font-size: 130%
+}
+
+
+
+.card2-cont > div
+{
+  display: table-row
+}
+
+.card2-cont .even-date i,
+.card2-cont .even-info i,
+.card2-cont .even-date time,
+.card2-cont .even-info p
+{
+  display: table-cell
+}
+
+.card2-cont .even-date i,
+.card2-cont .even-info i
+{
+  padding: 5% 5% 0 0
+}
+
+.card2-cont .even-info p
+{
+  padding: 30px 50px 0 0
+}
+
+.card2-cont .even-date time span
+{
+  display: block
+}
+
+.card2-cont Bronze
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:red;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+.card2-cont Silver
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:green;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.card2-cont Gold
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color:#FFC200;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.row:last-child .card2:first-child .card2-cont a2
+{
+  background-color: red;
+}
+
+.row:last-child .card2:last-child .card2-cont a2
+{
+  background-color: red;
+}
+
+@media screen and (max-width: 860px)
+{
+  .card2
+  {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-bottom: 10px
+  }
+  
+  .card2 + .card2{margin-left: 0}
+  
+  .card2-cont .even-date,
+  .card2-cont .even-info
+  {
+    font-size: 75%
+  }
+}
+
+                    
+</style>
+<body>
+<section class="container2">
+<h1>Won Challenges</h1>
+  <div class="row">
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>156</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Gold>gold</Gold>
+      </section>
+    </article>
+  </div>
+  <div class="row">
+    <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>139</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Bronze>Bronze</Bronze
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>129</span><span>ponts</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+      
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Gold>gold</Gold>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+   <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Bronze>Bronze</Bronze>
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Gold>gold</Gold>
+      </section>
+    </article>
+  </div>
+</div>
+ <div class="row">
+    <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>189</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+      <article class="card2 fl-left">
+      <section class="date">
+        <time datetime="23th feb">
+          <span>178</span><span>points</span>
+        </time>
+      </section>
+      <section class="card2-cont">
+        <small>brandname</small>
+        <a href><h3>Challenge Name</h3></a>
+        <div class="even-date">
+         
+         <time>
+           
+           <span></span>
+         </time>
+        </div>
+        <div class="even-info">
+          
+          
+        </div>
+        <Silver>Silver</Silver>
+      </section>
+    </article>
+  </div>
+</div>
+</body>
+</html>
+{% endblock %}

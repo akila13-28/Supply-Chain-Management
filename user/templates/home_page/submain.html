@@ -1,0 +1,329 @@
+{% extends 'home_page/main.html' %}
+{% include 'home_page/navigation.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Crevalto</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{% static 'css/page.css'%}">   
+        
+        
+    <style>
+    ::-webkit-scrollbar {
+        width: 0.25rem
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(99,39,120);
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(99,39,120);
+      }
+      .bg-modal{
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          position:absolute;
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+        
+      }
+      .model-content{
+          width: 500px;
+          height: 500px;
+          background-color: white;
+          border-radius: 0.35rem;
+          position: relative;
+          top: -120px;
+      }
+      .bg-mod{
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          position:absolute;
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+        
+      }
+      .mod-content{
+          width: 500px;
+          height: 500px;
+          background-color: white;
+          border-radius: 0.35rem;
+          position: relative;
+          top: -120px;
+      }
+      .close{
+          cursor: pointer;
+          width: 211px;
+        position: relative;
+        top: 15px;
+        left: 27px;
+        font-size: inherit;
+      }
+      .clo{
+        text-align: right;
+        position: relative;
+        font-size: xx-large;
+        transform: rotate(45deg);
+        top: -170px;
+        left: 60px;
+        cursor: pointer;
+      }
+      .user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #74cfbf;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;
+		}
+		.login_btn {
+			width: 100%;
+			background: rgb(99,39,120) !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: rgb(99,39,120) !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+     
+    </style>
+   
+  
+        
+    </head>
+    <body id="page-top" >
+        <!-- Masthead-->
+        <div class="head" style="position: relative;top: -22px;">
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                        <div class="form-group">
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li>
+                                    <div class="alert alert-success">{{message}}</div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    <h1 class="mx-auto my-0 text-uppercase">Crevalto</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5" style="position: relative;left: -25px;">A free, responsive, user friendly co-creation platform.</h2>
+                    <button id="open" class="btn btn-primary js-scroll-trigger" >Get Started</button>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+         <div class="bg-modal">
+             <div class="model-content">
+                 <div id="home" class="clo" style="color: rgb(99,39,120);" >+</div>
+                <div class="container-fluid">
+                    <div class="container5">
+                        <h2 class="text-center" style="position: relative;right: 100px;top: 20px;">Crevalto</h2>
+                        <hr style="width: 4%;background-color: black;position: relative;left: 232px;height: 1px;top: 10px;"></hr>
+                        <h2 class="text-center" style="position: relative;margin-left: 100px;top: -25px;">Login</h2>
+                         <hr style="margin-top: -3rem;"></hr>
+                        <div class="row">
+                            <div class="mod" >
+                            <div class="col-md-5 " >
+                                 <form  method="POST" action="" action style="width: 300px;position: relative;left: 90px;">
+                                     {%csrf_token%}
+
+                                     <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span aria-autocomplete="none" class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        {{form.username}}
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span aria-autocomplete="none" class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                                        </div>
+                                       {{form.email}}
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        {{form.password1}}
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        {{form.password2}}
+                                    </div>
+            
+                                       <div class="d-flex justify-content-center mt-3 login_container">
+                                         <input id="sig"class="btn login_btn" type="submit" value="Register Account" style="padding:9px">
+                                       </div>
+                                    
+                                </form>
+                                <div class="mt-4">
+                                    <div id="close" style="width: 300px;position: relative;left: 300px;" class="close">Already have an account? Login</div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                        
+                            
+                            <div class="col-md-2">
+                                <!-------null------>
+                            </div>
+                            <div class="log" style="width: 100%;
+                            position: relative;
+                            left: 100px;display: none;">
+                                <div class="col-md-5" style="position: relative;top: 40px;" >
+                                    <form  method="POST" action="" action style="width: 300px;position: absolute"> 
+                                        {%csrf_token%}
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span  class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="text" name="username" class="form-control">
+                                        </div>
+
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" ><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input type="password" name="password" class="form-control">
+                                        </div>
+                                       
+                                        <div class="d-flex justify-content-center mt-3 login_container">
+                                            <input class="btn login_btn" type="submit" value="Login" style="padding:9px">
+                                          </div>
+                                          
+
+                                       <div id="c" class="close" style="position: relative;left: -14px;">New user? Signup</div>
+                                     
+                                        </form>	
+                                </div>
+                            </div>
+                            
+                        
+                    
+                    
+                </div>
+             </div>
+                </div>
+                </div>
+                </div>  
+        </div>
+       
+    </section>
+        <!-- Footer-->
+        <footer class="footer  small text-center text-white-50" style="margin-bottom: -10%;position: relative;bottom: 200px;"><div class="container">Copyright © Your Website 2020</div></footer>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/page.js'%}"></script>
+        <script>
+            document.getElementById('open').addEventListener('click',function(){
+                document.querySelector('.bg-modal').style.display = 'flex';
+            });
+            document.getElementById('home').addEventListener('click',function(){
+                document.querySelector('.bg-model').style.display = 'none';
+            });
+            
+            document.getElementById('close').addEventListener('click',function(){
+                document.querySelector('.log').style.display = 'block';
+                document.querySelector('.mod').style.display = 'none';
+            });
+
+            document.getElementById('c').addEventListener('click',function(){
+                document.querySelector('.log').style.display = 'none';
+                document.querySelector('.mod').style.display = 'block';
+            });
+
+            document.getElementById('sig').addEventListener('click',function(){
+                document.querySelector('.bg-mod').style.display = 'block';
+           });
+            var form_fields = document.getElementsByTagName('input')
+		form_fields[2].placeholder='Username..';
+		form_fields[3].placeholder='Email..';
+		form_fields[4].placeholder='Enter password...';
+		form_fields[5].placeholder='Re-enter Password...';
+
+        form_fields[8].placeholder='Username...';
+        form_fields[9].placeholder='Password...';
+
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+            
+        </script>
+    </body>
+</html>
+
+{% endblock %}
