@@ -7,7 +7,6 @@ urlpatterns=[
      path('base',views.base),
      path('registback',views.registration,name='registration'),
      path('registerreq',views.reqregister,name='reqregister'),
-     path('loginreq',views.loginreq,name='loginreq'),
      path('profilereq',views.profilereq,name='profilereq'),
      path('editprofilereq',views.editprofilereq,name='editprofilereq'),
      path('samplereq',views.samplereq,name='samplereq'),

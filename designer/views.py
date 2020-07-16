@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-
 from .forms import CreateUserForm
 from .models import designerProfile
 from .forms import ProfilesForm
@@ -11,39 +10,19 @@ from .forms import ProfilesForm
 
 # Create your views here.
 def log(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print(username,password)
+        
+        user1 = authenticate(request, username = username , password = password)
+        if user1 is not None:
+            return render(request,"designer/index.html")
+        else:
+            print("fail")
+
     return render(request,"designer/login.html")
-
-
-
-def signup(request):
-    usrname=request.POST.get("regusername")
-    email=request.POST.get("regemail")
-    password=request.POST.get("regpassword")
-    confirmpassword=request.POST.get("regconpassword")
-    return render(request,"designer/index.html")
-
-# def home(request):
-   
-           
-        
-#     if request.method == 'POST':
-#         username = request.POST.get('logusername')
-#         password = request.POST.get('logpassword')
-        
-#         user1 = authenticate(request, username = username , password = password)
-
-#         if user1 is not None:
-#             login(request , user1)
-#             return render(request, 'designer/index.html')
-#         else:
-#             messages.error(request, 'username or password is incorrect')
-            
-
-
-#     context = {'form':form}
-#     return render(request, 'designer/login.html',context)
-
-
 
 def registration(request):
     usrname=request.POST.get("username")
@@ -60,24 +39,33 @@ def registration(request):
 
 
 def reqregister(request):
+    dic={}
     print("inside reqregister method")
     form = CreateUserForm()
+    context = {'form':form}
     if request.method == 'POST':  
         form = CreateUserForm(request.POST)
         print("252")  
         if form.is_valid():
-            # form.save()
+            form.save()
             user = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            print(user,email)
-            # messages.info(request,'Account created try log in')
-        
-    context = {'form':form}
-    return render(request,"designer/register.html",context)
 
-def loginreq(request):
-    print("inside loginreq")
-    return render(request,"designer/login.html")
+            print(user,email)
+            return redirect('editprofilereq')
+        else:
+            print("epty")
+            
+            # context.update({"value":"fail"})
+            # return render(request,"designer/register.html",context)
+            #check whether its printing in console
+             
+            messages.info(request,'Failed')
+       
+    
+    print(context)
+    return render(request,"designer/register.html",context)#change here spelling pothum run pannu phone off call panrem 
+
 
 def indexreq(request):
     return render(request,"designer/index.html")

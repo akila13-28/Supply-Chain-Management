@@ -114,8 +114,6 @@
 </style>
 
 
-
-
 <div class="container">
 
     <div class="d-flex justify-content-center h-100">
@@ -168,12 +166,22 @@
                 <div class="d-flex justify-content-center mt-3 login_container">
                     <input id="sig" class="btn login_btn" type="submit" value="Register Account" style="padding:9px">
                 </div>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>
+                        <div class="alert alert-success">{{message}}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
 
             </form>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
                     Already have an account?
-                    <a href="{% url 'loginreq' %}">Login</a>
+                    <a href="{% url 'login' %}">Login</a>
                 </div>
                 <div class="d-flex justify-content-center">
 
