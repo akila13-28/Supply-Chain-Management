@@ -20,8 +20,12 @@
             <!-- <img src="images/img.jpeg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
+                    
+                    <form method="POST" action="" id="signup-form" class="signup-form">
                         {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" name="create brand">
+                        
                         <h2 class="form-title">Register brand</h2>
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Brand name"/>
@@ -58,7 +62,7 @@
                         </div>
                     </form>
                     <p class="loginhere">
-                        Have already an account ? <a href="{% url 'home' %}" class="loginhere-link">Login here</a>
+                        Have already an account ? <a href="{% url 'bhome' %}" class="loginhere-link">Login here</a>
                     </p>
                 </div>
             </div>

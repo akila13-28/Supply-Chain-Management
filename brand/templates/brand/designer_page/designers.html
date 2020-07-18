@@ -9,7 +9,7 @@
             <div class="team-items">
                 {% for memb in membs %}
                  <div class="item">
-                     <a href="{% url 'profile' %}" ><img src="{% static 'images/img1.jpg' %}"  height="250px" alt="team" /></a>
+                     <a href="{% url 'bprofile' %}" ><img src="{% static 'images/img1.jpg' %}"  height="250px" alt="team" /></a>
                      <div class="inner">
                          <div class="info">
                               <h5>{{memb.name}}</h5>
@@ -26,7 +26,7 @@
                  {% endfor %}
         
            <div class="item">
-                     <a href="{% url 'dregister' %}" ><img src="{% static 'images/profile.jpg' %}"  height="250px" alt="team" /></a>
+                     <a href="{% url 'bdregister' %}" ><img src="{% static 'images/profile.jpg' %}"  height="250px" alt="team" /></a>
                      <div class="inner">
                          <div class="info">
                               <h5>New Member</h5>

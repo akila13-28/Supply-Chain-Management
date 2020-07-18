@@ -1,10 +1,6 @@
 {% load static %}
 <!DOCTYPE HTML>
-<!--
-	Overflow by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 
 <head>
@@ -51,16 +47,53 @@
         </div>
     </article>
 
-    <!-- Feature 2 -->
-    <article class="container box style1 left">
-        <a href="#" class="image fit"><img src="{% static 'images/ba2.jpg'%}" alt="" /></a>
-        <div class="inner">
+    <!-- login -->
+    <section id="login">
+        <article class="container box style3">
             <header>
-                <h2>User<br /> Creativity
-                </h2>
+                <h2>Login</h2>
             </header>
-            <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
-        </div>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class=" gtr-50">
+                    <div class="col-6 col-12-mobile"><input type="text" class="text" name="bname" placeholder="Brand Name" /></div><br>
+                    <div class="col-6 col-12-mobile"><input type="password" class="text" name="password" placeholder="Password" /></div>
+                    <br>
+                    <div class="col-12">
+                        <ul class="actions">
+                            {% for message in messages %}
+                            <li id='messages'>{{message}}</li>
+                            {% endfor %}
+                            <li><input type="submit" value="Login" /></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p>Not registered? <a href="{% url 'bregister' %}">signup</a></p>
+                    <p><a href='#'>Forget password?</a></p>
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- Contact -->
+    <article class="container box style3">
+        <header>
+            <h2>Contact Us</h2>
+            <p>Feedback</p>
+        </header>
+        <form method="post" action="#">
+            <div class="row gtr-50">
+                <div class="col-6 col-12-mobile"><input type="text" class="text" name="name" placeholder="Name" /></div>
+                <div class="col-6 col-12-mobile"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                <div class="col-12">
+                    <textarea name="message" placeholder="Message"></textarea>
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
     </article>
 
     <!-- Portfolio -->
