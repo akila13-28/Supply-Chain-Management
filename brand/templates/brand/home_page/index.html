@@ -6,160 +6,177 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Crevalto Brand</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<h1>Crevalto</h1>
-					<p>Co-Creation Platform</p>
-				</header>
-				<footer>
-					<a href="#login" class="button style2 scrolly-middle">Login</a>
-				</footer>
-			</section>
+<head>
+    <title>Crevalto Brand</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+</head>
 
-		<!-- Banner -->
-			<section id="banner">
-				<header>
-					<h2>This is Workflow</h2>
-				</header>
-				<p>A platform where on-demand production plays the main role with user cretivity<br />
-					Brand can create challenges with help of designers<br />This process works
-					under the <a href="#">Crevalto Commons license</a>.</p>
-				<footer>
-					<a href="#first" class="button style2 scrolly">Workflow</a>
-				</footer>
-			</section>
+<body class="is-preload">
 
-		<!-- Feature 1 -->
-			<article id="first" class="container box style1 right">
-				<a href="#" class="image fit"><img src="{% static 'images/ba1.jpg'%}" alt="" /></a>
-				<div class="inner">
-					<header>
-						<h2>Create<br />
-						product</h2>
-					</header>
-					<p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
-				</div>
-			</article>
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <h1>Crevalto</h1>
+            <p>Co-Creation Platform</p>
+        </header>
+        <footer>
+            <a href="#login" class="button style2 scrolly-middle">Login</a>
+        </footer>
+    </section>
 
-		<!-- Feature 2 -->
-			<article class="container box style1 left">
-				<a href="#" class="image fit"><img src="{% static 'images/ba2.jpg'%}" alt="" /></a>
-				<div class="inner">
-					<header>
-						<h2>User<br />
-						Creativity</h2>
-					</header>
-					<p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
-				</div>
-			</article>
+    <!-- Banner -->
+    <section id="banner">
+        <header>
+            <h2>This is Workflow</h2>
+        </header>
+        <p>A platform where on-demand production plays the main role with user cretivity<br /> Brand can create challenges with help of designers<br />This process works under the <a href="#">Crevalto Commons license</a>.</p>
+        <footer>
+            <a href="#first" class="button style2 scrolly">Workflow</a>
+        </footer>
+    </section>
 
-		<!-- Portfolio -->
-			<article class="container box style2">
-				<header>
-					<h2>Popular Brands</h2>
-					<p>Justo phasellus et aenean dignissim<br />
-					placerat cubilia purus lectus.</p>
-				</header>
-				<div class="inner gallery">
-					<div class="row gtr-0">
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/1.jpg'%}" alt="" width="200px" height="150px" /></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/3.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/4.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/5.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-					</div>
-					<div class="row gtr-0">
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/6.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/7.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/8.jpg'%}" alt="" width="200px" height="150px"/></a></div>
-						<div class="col-3 col-12-mobile"><a href="#" class="image fit"><img src="{% static 'images/2.png'%}" alt="" width="200px" height="150px"/></a></div>
-					</div>
-				</div>
-			</article>
+    <!-- Feature 1 -->
+    <article id="first" class="container box style1 right">
+        <a href="#" class="image fit"><img src="{% static 'images/ba1.jpg'%}" alt="" /></a>
+        <div class="inner">
+            <header>
+                <h2>Create<br /> product
+                </h2>
+            </header>
+            <p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
+        </div>
+    </article>
 
-		<!-- login -->
-		<section id="login">
-		<article class="container box style3">
-			<header>
-				<h2>Login</h2>
-			</header>
-			<form method="POST" action="">
-				{% csrf_token %}
-				<div class=" gtr-50">
-					<div class="col-6 col-12-mobile"><input type="text" class="text" name="bname" placeholder="Brand Name" /></div><br>
-					<div class="col-6 col-12-mobile"><input type="password" class="text" name="password" placeholder="Password" /></div>
-					<br>
-					<div class="col-12">
-						<ul class="actions">
-							{% for message in messages %}
-									<li id='messages'>{{message}}</li>
-							{% endfor %}
-							<li><input type="submit" value="Login" /></li>
-						</ul>
-					</div>
-					<br>
-					<p>Not registered? <a href="{% url 'register' %}">signup</a></p>
-					<p><a href='#'>Forget password?</a></p>
-				</div>
-			</form>
-		</article>	
-		</section>
-		<!-- Contact -->
-			<article class="container box style3">
-				<header>
-					<h2>Contact Us</h2>
-					<p>Feedback</p>
-				</header>
-				<form method="post" action="#">
-					<div class="row gtr-50">
-						<div class="col-6 col-12-mobile"><input type="text" class="text" name="name" placeholder="Name" /></div>
-						<div class="col-6 col-12-mobile"><input type="text" class="text" name="email" placeholder="Email" /></div>
-						<div class="col-12">
-							<textarea name="message" placeholder="Message"></textarea>
-						</div>
-						<div class="col-12">
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</div>
-					</div>
-				</form>
-			</article>
+    <!-- Feature 2 -->
+    <article class="container box style1 left">
+        <a href="#" class="image fit"><img src="{% static 'images/ba2.jpg'%}" alt="" /></a>
+        <div class="inner">
+            <header>
+                <h2>User<br /> Creativity
+                </h2>
+            </header>
+            <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
+        </div>
+    </article>
 
-		
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
-				<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-				<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-			</ul>
-			<div class="copyright">
-				<ul class="menu">
-					<li>&copy; Crevalto. All rights reserved.</li><li>Design: Brand Team </li>
-				</ul>
-			</div>
-		</section>
+    <!-- Portfolio -->
+    <article class="container box style2">
+        <header>
+            <h2>Popular Brands</h2>
+            <p>Justo phasellus et aenean dignissim<br /> placerat cubilia purus lectus.</p>
+        </header>
+        <div class="inner gallery">
+            <div class="row gtr-0">
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/1.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/3.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/4.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/5.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+            </div>
+            <div class="row gtr-0">
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/6.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/7.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/8.jpg'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+                <div class="col-3 col-12-mobile">
+                    <a href="#" class="image fit"><img src="{% static 'images/2.png'%}" alt="" width="200px" height="150px" /></a>
+                </div>
+            </div>
+        </div>
+    </article>
 
-		<!-- Scripts -->
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.poptrox.min.js' %}"></script>
-			<script src="{% static 'assets/js/browser.min.js' %}"></script>
-			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<script src="{% static 'assets/js/main.js' %}"></script>
+    <!-- login -->
+    <section id="login">
+        <article class="container box style3">
+            <header>
+                <h2>Login</h2>
+            </header>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class=" gtr-50">
+                    <div class="col-6 col-12-mobile"><input type="text" class="text" name="bname" placeholder="Brand Name" /></div><br>
+                    <div class="col-6 col-12-mobile"><input type="password" class="text" name="password" placeholder="Password" /></div>
+                    <br>
+                    <div class="col-12">
+                        <ul class="actions">
+                            {% for message in messages %}
+                            <li id='messages'>{{message}}</li>
+                            {% endfor %}
+                            <li><input type="submit" value="Login" /></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p>Not registered? <a href="{% url 'register' %}">signup</a></p>
+                    <p><a href='#'>Forget password?</a></p>
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- Contact -->
+    <article class="container box style3">
+        <header>
+            <h2>Contact Us</h2>
+            <p>Feedback</p>
+        </header>
+        <form method="post" action="#">
+            <div class="row gtr-50">
+                <div class="col-6 col-12-mobile"><input type="text" class="text" name="name" placeholder="Name" /></div>
+                <div class="col-6 col-12-mobile"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                <div class="col-12">
+                    <textarea name="message" placeholder="Message"></textarea>
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </article>
 
-	</body>
+
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+            <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+        </ul>
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; Crevalto. All rights reserved.</li>
+                <li>Design: Brand Team </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.poptrox.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
 </html>

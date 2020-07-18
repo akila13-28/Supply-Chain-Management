@@ -15,4 +15,4 @@ class ProfilesForm(forms.ModelForm):
         model = designerProfile
         fields = '__all__'
         #fields=['user', 'name', 'phn', 'address', 'email', 'education', 'country', 'state', 'profile_pic']
-        exclude = ['user']
+        # exclude = ['user']

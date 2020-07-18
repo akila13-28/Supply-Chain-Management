@@ -52,7 +52,7 @@ def reqregister(request):
             email = form.cleaned_data.get('email')
 
             print(user,email)
-            return redirect('editprofilereq')
+            return redirect('createprofile')
         else:
             print("epty")
             
@@ -73,8 +73,51 @@ def indexreq(request):
 def profilereq(request):
     return render(request,"designer/profile.html")
 
+def createprofile(request):
+    # username=request.user
+    form = ProfilesForm()
+    if request.method == 'POST':
+        
+        print("inside create if")
+        print(request.POST.get("FirstName"))
+        print(request.POST.get("LastName"))
+        print(request.user)
+        #print(form)
+        designerProfile.objects.create(user=request.user,FirstName=request.POST.get("FirstName"),LastName=request.POST.get("LastName"))
+        # # if form.is_valid():
+        #     print("inside form valid")
+        #     designerProfile.objects.create(form)
+        # else:
+        #     print("bbbbbb")
+    context = {'form':form}
+    print(context)
+    return render(request,"designer/editprofile.html",context)    
+
 def editprofilereq(request):
-    return render(request,"designer/editprofile.html")
+    print("inside editprofilereq")
+    print(request.user)
+    
+    profile = designerProfile.objects.get(user=request.user)
+    form = ProfilesForm(instance=profile)
+    
+    if request.method == 'POST':  
+        fname=request.POST.get("FirstName","")
+        lname=request.POST.get("LastName")
+        mob=request.POST.get("Mobile")
+        print("////////////////////",fname,lname,mob)
+        form = ProfilesForm(request.POST,request.FILES,instance=request.user.profiles)
+        if form.is_valid():
+            form.save()
+            firname = form.cleaned_data.get('FirstName')
+            categ = form.cleaned_data.get('Category')
+            print("////////////////////",firname,categ)
+            return redirect('indexreq')
+        else:
+            print("not a valid form")
+
+    context = {'form':form}
+    print(context)
+    return render(request,"designer/editprofile.html",context)
 
 def samplereq(request):
     return render(request,"designer/sample.html")
