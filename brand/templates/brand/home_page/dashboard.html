@@ -1,15 +1,16 @@
 {% extends 'brand/home_page/main.html' %}
 {% load static %}
 {% block content %}
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <h1 style="font-size:35px;color:white;background-color:black; text-align:center;font-family:'Times New Roman';padding:13px;"> {{bname}} Dashboard  </h1>
 {% include 'brand/home_page/status.html' %}
 
-<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}"/>
+<!-- <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}"/>
 <link rel="stylesheet" href="{% static 'css/slider.css' %}"/>
   
 <body>
-<!---Product slider------------------------->
+<!--Product slider
 <div class="swiper-container">
     <div class="swiper-wrapper">
     {% for i in prds %} 
@@ -32,7 +33,7 @@
     </div>
 </div>
 <!---Designer slideer-----------   
--------------->
+--------------
 <div class="swiper-container">
     <div class="swiper-wrapper">
         
@@ -56,5 +57,5 @@
 
 <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
-</body>
+</body> -->
 {% endblock %}

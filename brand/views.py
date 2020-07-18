@@ -4,7 +4,7 @@ from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import ProductForm , logs ,Design
+from .forms import ProductForm , logs ,Design,BrandReg
 import paho.mqtt.client as mqtt
 from datetime import *
 # Create your views here.
@@ -96,26 +96,33 @@ def addproduct(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        #print("printing product:",request.POST)
-        name=request.POST.get('name')
-        password=request.POST.get('password')
-        repeatpwd=request.POST.get('re_password')
-        email=request.POST.get('email')
-        TandC=request.POST.get('agree-term')
-        logo=request.POST.get('logo')
-        certificate=request.POST.get('certificate')
-        if(password == repeatpwd):
-            if(TandC == 'on'):
-                log=Registerpage(bname=name,bemail=email,password=password,logo=logo,certificate=certificate)
-                log.save()
-                return redirect('home')
-            else:
-                messages.info(request,'Please check the Tearms and Conditions ')
-        else:
-            messages.info(request,'Passwords does not match')
-    
-    return render(request, 'brand/home_page/register.html')
+    form = BrandReg()
+    if request.method =='POST':
+        form = BrandReg(request.POST)
+        if form.is_valid():
+            form.save()
+            print('DONE>>>>>>>>>>>')
+            print(request.POST.get('email'))
+    # if request.method == 'POST':
+    #     #print("printing product:",request.POST)
+    #     name=request.POST.get('name')
+    #     password=request.POST.get('password')
+    #     repeatpwd=request.POST.get('re_password')
+    #     email=request.POST.get('email')
+    #     TandC=request.POST.get('agree-term')
+    #     logo=request.POST.get('logo')
+    #     certificate=request.POST.get('certificate')
+    #     if(password == repeatpwd):
+    #         if(TandC == 'on'):
+    #             log=Registerpage(bname=name,bemail=email,password=password,logo=logo,certificate=certificate)
+    #             log.save()
+    #             return redirect('home')
+    #         else:
+    #             messages.info(request,'Please check the Tearms and Conditions ')
+    #     else:
+    #         messages.info(request,'Passwords does not match')
+    context ={'form':form}
+    return render(request, 'brand/home_page/register.html',context)
 
 
 def designers(request):

@@ -12,7 +12,7 @@
             <div class="team-items">
                 {% for i in prds %}
                  <div class="item"><!--/static/images/logo/{{i.images}}-->
-                     <a href="{% url 'profile' %}" ><img src="{{i.images.url}}"  height="350px" alt="team" /></a>
+                     <a href="{% url 'bprofile' %}" ><img src="{{i.images.url}}"  height="350px" alt="team" /></a>
                      <div class="inner">
                          <div class="info">
                               <h5>Name:{{i.name}}</h5>
@@ -23,7 +23,7 @@
                  </div>
                  {% endfor %}
                  <div class="item">
-                    <a href="{% url 'addproduct' %}" ><img src="{% static 'images/add.png' %}"  height="350px" alt="team" /></a>
+                    <a href="{% url 'baddproduct' %}" ><img src="{% static 'images/add.png' %}"  height="350px" alt="team" /></a>
                     <div class="inner">
                         <div class="info">
                              <h5>New Product</h5>
